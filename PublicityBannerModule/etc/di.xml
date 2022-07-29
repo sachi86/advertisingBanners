@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Project\PublicityBannerModule\Api\Data\PublicityBannerInterface"
+                type="Project\PublicityBannerModule\Model\Data\PublicityBanner"/>
+    <preference for="Project\PublicityBannerModule\Api\Data\PublicityBannerCategoryInterface"
+                type="Project\PublicityBannerModule\Model\Data\PublicityBannerCategory"/>
+
+    <virtualType name="Project\PublicityBannerModule\Model\ResourceModel\PublicityBannerModel\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">publicity_banner</argument>
+            <argument name="resourceModel" xsi:type="string">Project\PublicityBannerModule\Model\ResourceModel\PublicityBannerResource</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="publicity_banner_listing_data_source" xsi:type="string">Project\PublicityBannerModule\Model\ResourceModel\PublicityBannerModel\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

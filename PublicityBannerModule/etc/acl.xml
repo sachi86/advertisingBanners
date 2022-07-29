@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::marketing">
+                    <resource id="Magento_CatalogRule::promo" title="Promotions" translate="title" sortOrder="10">
+                        <resource id="Project_PublicityBannerModule::banner_form" title="Publicity Banner Form" translate="title" sortOrder="10" />
+                        <resource id="Project_PublicityBannerModule::banner_listing" title="Publicity Banner Listing" translate="title" sortOrder="20" />
+                        <resource id="Project_PublicityBannerModule::edit" title="Publicity Banner Save" translate="title" sortOrder="30" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

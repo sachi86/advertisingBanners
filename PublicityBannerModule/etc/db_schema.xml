@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="publicity_banner_category" resource="default" engine="innodb"
+           comment="Publicity Banner Category Table">
+        <column xsi:type="int" name="publicity_banner_id" unsigned="true" nullable="false" identity="false"
+                comment="Publicity Banner entity ID"/>
+        <column xsi:type="int" name="category_id" unsigned="true" nullable="false" identity="false"
+                comment="Category ID"/>
+        <constraint xsi:type="unique" referenceId="publicity_banner_category_publicity_banner_id_category_id">
+            <column name="publicity_banner_id"/>
+            <column name="category_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="publicity_banner_category_publicity_banner_id_entity_id" table="publicity_banner_category" column="publicity_banner_id" referenceTable="publicity_banner" referenceColumn="entity_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="publicity_banner_category_category_id_catalog_category_entity" table="publicity_banner_category" column="category_id" referenceTable="catalog_category_entity" referenceColumn="entity_id" onDelete="CASCADE"/>
+        <index referenceId="publicity_banner_category_publicity_banner_id" indexType="btree">
+            <column name="publicity_banner_id"/>
+        </index>
+        <index referenceId="publicity_banner_category_category_id" indexType="btree">
+            <column name="category_id"/>
+        </index>
+    </table>
+    <table name="publicity_banner" resource="default" engine="innodb" comment="Publicity Banner Table">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true"
+                comment="Publicity Banner  entity ID"/>
+        <column xsi:type="varchar" name="label" nullable="false" length="255" comment="Label of Publicity Banner"/>
+        <column xsi:type="text" name="description" nullable="false" comment="Description od Publicity Banner"/>
+        <column xsi:type="varchar" name="url_media" nullable="false" length="255"
+                comment="Url image of Publicity Banner"/>
+        <column xsi:type="date" name="date_from" nullable="false"
+                comment="Starting date to display on the frontend categories pages"/>
+        <column xsi:type="date" name="date_to" nullable="false"
+                comment="Ending date to display on the frontend categories pages"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <index referenceId="PUBLICITY_BANNER_ENTITY_ID" indexType="btree">
+            <column name="entity_id"/>
+        </index>
+    </table>
+</schema>

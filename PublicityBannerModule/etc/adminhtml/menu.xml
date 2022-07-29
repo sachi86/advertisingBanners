@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Project_PublicityBannerModule::banner_form" title="Publicity Banner Form" translate="title" sortOrder="10" module="Project_PublicityBannerModule" parent="Magento_CatalogRule::promo" action="publicity_banner/Display/Form/Index" resource="Project_PublicityBannerModule::banner_form"/>
+        <add id="Project_PublicityBannerModule::banner_listing" title="Publicity Banner Listing" translate="title" sortOrder="20" module="Project_PublicityBannerModule" parent="Magento_CatalogRule::promo" action="publicity_banner/Index/Index" resource="Project_PublicityBannerModule::banner_listing"/>
+    </menu>
+</config>

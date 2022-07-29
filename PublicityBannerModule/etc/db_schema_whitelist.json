@@ -1,0 +1,24 @@
+{
+  "publicity_banner": {
+    "column": {
+      "entity_id": true,
+      "label": true,
+      "description": true,
+      "url_media": true,
+      "date_from": true,
+      "date_to": true
+    },
+    "index": {
+      "PUBLICITY_BANNER_ENTITY_ID": true
+    },
+    "constraint": {
+      "PRIMARY": true
+    }
+  },
+  "publicity_banner_category": {
+    "column": {
+      "publicity_banner_id": true,
+      "category_id": true
+    }
+  }
+}
